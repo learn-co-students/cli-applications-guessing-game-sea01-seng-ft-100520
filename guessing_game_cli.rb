@@ -1,26 +1,21 @@
-# Code your solution here!
-def gen_number
-    rand(1...6)
-end
 def prompt
     puts "Guess a number between 1 and 6"
+    ans = gets.chomp
+    if ans == 'exit'
+        return ans
+    else
+        return ans.to_i
+    end
 end
-def capture_input
-    gets.chomp
-end
-def compare?(guess, number)
-    guess == number ? true : false
-end
-
-
 def run_guessing_game
-    computer_number = gen_number
-    prompt
-    player_guess = capture_input
-    if compare?(player_guess, gen_number)
+    computer_number = rand(6) + 1
+    player_guess = prompt    
+    if player_guess == computer_number
         puts "You guessed the correct number!"
     elsif player_guess == 'exit'
+        puts "Goodbye!"
     else
         puts "Sorry! The computer guessed #{computer_number}."
+    end
 
 end
