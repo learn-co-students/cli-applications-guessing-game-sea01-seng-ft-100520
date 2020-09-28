@@ -1,5 +1,5 @@
 def run_guessing_game
-  correct_answer = rand(1..6)
+  correct_answer = rand(6) + 1
   user_input = gets.chomp
   
   if user_input == 'exit'
